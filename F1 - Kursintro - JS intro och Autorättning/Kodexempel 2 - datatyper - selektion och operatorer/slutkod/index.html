@@ -10,6 +10,38 @@
 			function write(text){
 				document.write("<p>" + text + "</p>");
 			}
+
+			let tal1 = 10;
+			let tal2 = "5";
+			//tal2 = parseInt(tal2);
+			//tal2 = 5;
+
+			if(typeof tal1 == "number"){
+				write("Tal1 är ett nummer!");
+			}
+
+			if(typeof tal2 == "number"){
+				write("Tal2 är ett nummer!");
+			}
+
+			let teacher = true;
+			let student = false;
+
+			if(teacher){
+				write("Jag är en lärare");
+			}
+
+			write(0.1 + 0.2);
+
+			if(95 == "95"){
+				write("Talet 95 har samma värde som strängen '95'");
+			}
+
+			if(95 === parseInt("95mkoasdkmsadksdaklmdas")){
+				write("Talet 95 har samma värde som strängen '95'");
+			}
+
+			write(parseInt("95mkoasdkmsadksdaklmdas312213231"));
 			
 		</script>
 	</body>

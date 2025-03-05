@@ -2,12 +2,38 @@
 <html>
 	<head>
 		<title>Kodexempel 3</title>
+		
 	</head>
 	<body>
 		<input type="text" value="Text här" id="input" />
 
 		<script type="text/javascript">
 
+			window.onload = function(){
+				for(let i = 0; i < 10; i++){
+					if(i % 2 == 0){
+						console.log("I är jämnt " +  i);
+					}else{
+						console.log("I är udda " +  i);
+					}
+				}
+
+				//console.log(i);
+
+				console.log(window);
+				console.log(window.history);
+				console.log(window.history.length);
+
+				console.log(document.getElementById("input"));
+
+
+				console.log("%c Cool färg", "background: #42f5ce; color: #4e42f5; padding: 32px;")
+
+				console.log(Math.floor(1.999999999999999999999999999999999999999999999999));
+				console.log(1.9999999999999999999999999);
+				console.log(1.99999999);
+			}
+			
 		</script>
 	</body>
 </html>
