@@ -1,0 +1,56 @@
+body{
+	margin: 0;
+	background-color: black;
+}
+
+#container{
+	background-color: #330000;
+	width: 400px;
+	height: 100vh;
+}
+
+#messages{
+	padding: 8px;
+	overflow-y: scroll;
+	height: 90vh;
+}
+
+.message{
+	border: 4px solid #ffb3b3;
+	border-radius: 6px;
+	background-color: #990000;
+	padding: 8px;
+	color: #ffe6e6;
+	font-size: 18px;
+}
+
+.message:nth-child(odd){
+	background-color: red;
+}
+
+
+#buttons{
+	display: flex;
+	flex-wrap: column wrap;
+	padding: 12px;
+	height: 5vh;
+
+}
+
+#input{
+	width: calc(80% - 12px);
+	border-radius: 6px;
+	background-color: #ff0000;
+	border: none;
+	color: #ffe6e6;
+	font-size: 24px;
+}
+
+#btn_send{
+	width: 20%;
+	border: none;
+	background-color: #990000;
+	border-radius: 6px;
+	color: #ffe6e6;
+	font-size: 24px;
+}
