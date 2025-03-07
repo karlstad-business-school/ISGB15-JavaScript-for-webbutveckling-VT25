@@ -7,8 +7,8 @@
 	<body>
 		<div id="container">
 			<div id="messages">
-				<p class="message">Carl: Hi | 2021-03-05</p>
-				<p class="message">Maria: Hello | 2021-03-05</p>
+				<p class="message">Carl: Hi | 12:32:17</p>
+				<p class="message">Maria: Hello | 12:32:33</p>
 			</div>
 			<div id="buttons">
 				<input type="text" id="input">
@@ -18,10 +18,33 @@
 
 		<script type="text/javascript">
 
-
+			let input = document.getElementById("input");
+			let messages = document.querySelector("#messages");
+			//console.log(input, messages);
 			let button = document.getElementById("btn_send");
+		
+			function createMessage(username, text){
+				let p = document.createElement("p");
+				p.setAttribute("class", "message");
+
+				let date = new Date();
+				let hours = date.getHours();
+				let minutes = date.getMinutes();
+				let seconds = date.getSeconds();
+				let fullTimeString = hours + ":" + minutes + ":" + seconds;
+
+				let currentTime = date.toLocaleTimeString("sv-SE");
+				//p.textContent = username + ": " + text + " | " + currentTime;
+				p.textContent = username + ": " + text + " | " + fullTimeString;
+
+				messages.appendChild(p);
+			}
+
+
+			
 			button.addEventListener("click", function(){
-				console.log("Knappen funkar!");
+				let text = input.value;
+				createMessage("Alexander", text); 
 			});
 		</script>
 	</body>
