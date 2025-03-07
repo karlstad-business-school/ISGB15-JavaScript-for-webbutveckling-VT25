@@ -33,6 +33,35 @@
                 'Gotlands län',
             ];
 
+            console.log(counties);
+            console.log(counties[1]);
+            counties.sort();
+            console.log(counties);
+
+            document.write("<ul>");
+
+            for(let i = 0; i < counties.length; i++){
+                document.write("<li>" + counties[i] + "</li>");
+            }
+
+            document.write("</ul>");
+
+            counties.forEach(function(item, index){
+                document.write("<p>" + item + "</p>");
+            });
+
+
+
+            let numbers = [11, 5, 3, 8, 12, 23, 33, 44, 4, 9, 1];
+            console.log(numbers);
+            //numbers.sort();
+            numbers.sort(function(a, b){
+                return a - b;
+            });
+            console.log(numbers);
+
+            
+
         </script>
     </body>
 </html>

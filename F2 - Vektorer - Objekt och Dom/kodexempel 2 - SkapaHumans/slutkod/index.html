@@ -9,13 +9,37 @@
 			"use strict"
 
 
+			let human = {
+				name: "Carl",
+				age: 36,
+				height: 190,
+
+				setName: function(name){
+					this.name = name;
+				},
+
+				getName: function(){
+					return this.name;
+				}
+			};
 			
+			console.log(human);
+
+			human.setName("Alexander");
+			console.log(human.name);
+			console.log(human);
 
 
 
+			function Human(name, age, height){
+				this.name = name;
+				this.age = age;
+				this.height = height;
 
-
-
+				this.print = function(){
+					document.write("<p>" + this.name + " | " + this.age + "</p>")
+				}
+			}
 
 			var nameList = [
 				'Alexander',
@@ -27,6 +51,30 @@
 				"Lisa",
 				"Elin"
 			];
+			
+			//console.log(nameList);
+			for(let i = 0; i < 10; i++){
+				let nameIndex = Math.floor(Math.random() * nameList.length);
+				let name = nameList[nameIndex];
+
+				let age = Math.floor(Math.random() * 51) + 10;
+				let height = Math.floor(Math.random() * 121) + 50;
+
+				let h = new Human(name, age, height);
+				//Human.print();
+				h.print();
+			}
+
+			//let alexander = new Human("Alexander", 61, 130);
+			//console.log(alexander);
+
+
+
+
+
+
+
+			
 		</script>
 	</body>
 </html>
