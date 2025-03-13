@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+        <meta charset="utf-8" /> 
+        <title>
+			DOM och Objektorientering i JS		
+        </title>	
+	</head>
+	<body>
+        <p data-id="1">1</p>
+		<p data-id="2">2</p>
+		<p data-id="3">3</p>
+		<p data-id="4">4</p>
+		<p>Ett</p>
+		<p>Två</p>
+		
+		<div>
+			<p>Test</p>
+		</div>
+
+		<script>
+		
+			'use strict';
+
+			function queryDOM() {
+				
+				console.log( document.querySelector('body') );
+
+				let pElements = document.querySelectorAll('p');
+				
+				console.log(pElements);
+
+				for(let i = 0; i < pElements.length; i++) {
+					console.log(pElements.item(i));
+				}
+				
+				pElements = document.querySelectorAll('p[data-id]');
+				
+				console.log(pElements);
+
+				for(let j = 0; j < pElements.length; j++) {
+					console.log(pElements.item(j));
+				}
+				
+			}
+			
+			queryDOM();
+		
+		</script>
+
+		<p id="demoone"></p>
+		<p id="demotwo"></p>
+		<p id="demothree"></p>
+
+		<script src="oodemoone.js"></script>
+        <script src="oodemotwo.js"></script>
+        <script src="oodemothree.js"></script>
+        <script src="main.js"></script>
+		
+    </body>
+</html>
