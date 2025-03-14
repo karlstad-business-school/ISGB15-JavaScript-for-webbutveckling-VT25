@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+        <meta charset="utf-8"> 
+        <title>
+			JavaScript för webbutveckling ISGB15		
+        </title>	
+	</head>
+	<body onload="myOwnOnLoad();"> <!-- När DOM:en är skapad triggas denna händelse (onload). -->
+        <div>
+            <p id="errorMsg" style="color: red;"></p>
+        </div>
+		
+		<!-- När användare klickar på submit-knappen triggas onsubmit och när användaren klickar på submit-knappen triggas onsubmit. -->
+		<form action="ex2.html" method="post"
+		onsubmit="return myOwnOnSubmit();"
+		onreset="myOwnOnReset();">
+		
+			<input type="text" title="nickName" name="nickName" oninput="myOwnOnInput(this);"> <!-- Denna händelse (oninput) triggas när användaren ändrar innehållet i textrutan. -->
+			<br>	
+
+			<input type="text" title="seconds" name="seconds" oninput="myOwnOnInput(this);"> <!-- Denna händelse (oninput) triggas när användaren ändrar innehållet i textrutan. -->
+			<br>	
+
+			<input type="submit" value="Visa">
+			<input type="reset" value="Rensa">
+			
+		</form>
+		
+		<script src="ex2.js"></script>
+		
+    </body>
+</html>
