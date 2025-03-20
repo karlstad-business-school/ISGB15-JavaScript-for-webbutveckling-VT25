@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <ul>
+    <ul id="ett">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>
@@ -39,10 +39,74 @@
     <a href="https://www.kau.se/" id="kau-link">kau.se</a>
 
     <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+
 
 
     <script>
-   
+        window.addEventListener('load', ()=>{
+            
+            document.getElementById('ett').addEventListener('click', function(oEvt){
+
+                console.log('target är nu:');
+                console.log(oEvt.target);
+                console.log('currentrTarget:');
+                console.log(oEvt.currentTarget);
+
+            });
+            
+           document.querySelector('a').addEventListener('click', function(e) {
+            e.preventDefault();
+           });
+
+           let lis = document.querySelectorAll('li');
+
+           for(let i = 0; i<lis.length;i++) {
+
+                lis[i].addEventListener('click', lisClick);
+
+           }
+
+           let cubes = document.querySelectorAll('.cube');
+           let currentCube = null;
+
+           for(let i=0; i< cubes.length;i++) {
+                let cube = cubes[i];
+
+                cube.addEventListener('mousedown', function(e) {
+                    currentCube =  cube;
+                    window.addEventListener('mousemove', moveCube);
+                    window.addEventListener('mouseup', function(e){
+                        window.removeEventListener('mousemove', moveCube);
+                        currentCube = null;
+                    });
+                });
+
+
+           }
+
+           function moveCube(event){
+                currentCube.style.left = event.clientX + 'px';
+                currentCube.style.top = event.clientY + 'px';
+
+
+           }
+
+
+
+
+
+
+
+
+        });
+
+        function lisClick(evt) {
+            alert('tjo!');
+            evt.stopPropagation();
+        }
+
     </script>
 </body>
 </html>

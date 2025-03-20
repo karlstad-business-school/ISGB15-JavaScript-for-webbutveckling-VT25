@@ -26,6 +26,28 @@
         let checkbox = document.getElementById("input-checkbox");
         let radio1 = document.getElementById("input-radio1");
         let radio2 = document.getElementById("input-radio2");
+
+        let radios = document.querySelectorAll("input[name='radio']");
+
+        //radio1.setAttribute('style','background-color: green');
+
+        for(let i=0; i<radios.length;i++) {
+            //radios[i].setAttribute('style','background-color: green');
+            console.log(radios[i]);
+        }
+
+        //console.log(checkbox.checked);
+        form.oninput = function() {
+            //console.log(checkbox.checked);
+            //console.log('Färgen är nu: ' + color.value);
+            if(color.value==="#ff0000") {
+                document.querySelector('body').setAttribute('style','background-color: red;');
+            }
+        }
+
+
+
+
     </script>
     
 </body>
