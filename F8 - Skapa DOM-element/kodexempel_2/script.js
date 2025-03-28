@@ -40,3 +40,51 @@ let jsonobj ={
 		}
 	]
 };
+
+window.addEventListener('load', ()=>{
+
+	updateTable();
+	
+});
+
+function updateTable() {
+	for(let i=0; i<jsonobj.bilar.length;i++) {
+		//console.log(jsonobj.bilar[i].modell);
+		let tr = document.createElement('tr');
+		let td = document.createElement('td');
+
+		td.textContent = jsonobj.bilar[i].marke;
+		tr.addEventListener('click', removeCar);
+		tr.appendChild(td);
+
+
+		td = document.createElement('td');
+		td.textContent = jsonobj.bilar[i].modell;
+		tr.appendChild(td);
+
+		td = document.createElement('td');
+		td.textContent = jsonobj.bilar[i].arsmodell;
+		tr.appendChild(td);
+
+		td = document.createElement('td');
+		let btn = document.createElement('a');
+		btn.classList.add('btn', 'btn-danger');
+		btn.setAttribute('data-radnummer', i);
+		btn.textContent='ta bort';
+		td.appendChild(btn);
+		tr.appendChild(td);
+
+		document.querySelector('.table-bordered').appendChild(tr);
+
+	}
+}
+
+
+function removeCar(evt){
+	console.log(evt.target.tagName);
+	if(evt.target.tagName==='A') {
+		console.log(evt.currentTarget);
+		evt.currentTarget.remove();
+	}
+
+}
