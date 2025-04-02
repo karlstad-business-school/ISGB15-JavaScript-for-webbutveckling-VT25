@@ -4,7 +4,7 @@
 //F9
 /*
 Din uppgift är att modifiera tabellen som finns i index.html. 
-När en användare går in på webbsidan ska koden vänta till hela Docment Object Model (DOM) har laddats klart och då ska en anonym funktion anropa funktionen createColumns().
+När en användare går in på webbsidan ska koden vänta tills hela Docment Object Model (DOM) har laddats klart och då ska en anonym funktion anropa funktionen createColumns().
 
 Krav:
     • Du får inte använda egenskaperna textContent, innerText, outerText, innerHTML eller outerHTML
@@ -28,10 +28,10 @@ let oData = {
 
 
 /*
-Bygg klart funktionen createColumns som tar emot en referens till tabellen (tableRef i oData). 
-Funktionen ska sedan gå igenom alla tabellrader (TR) och lägga till en ny cell i slutet av varje rad som består av summan av den raden. 
+Skriva klart koden för funktionen createColumns() som tar emot en referens till tabellen (tableRef i oData). 
+Funktionen ska gå igenom alla tabellrader (TR) och lägga till en ny cell i slutet av varje rad som består av summan av den raden. 
 Summan ska ni få fram genom funktionen sumOfAllCellsInARow(). 
-Cellen med summan ska ha en bakgrundsfärg av ”lightblue” samt en ”font-weight” av ”bold”
+Cellen med summan ska ha en bakgrundsfärg av ”lightblue” samt ”font-weight” med värdet ”bold”
 */
 function createColumns(tableNodeRef) {}
 
@@ -39,9 +39,9 @@ function createColumns(tableNodeRef) {}
 
 /*
 Skriv klart koden för funktionen sumOfAllCellsInARow() som tar emot en referens till den rad ni vill räkna ut summan på. 
-Här är det viktigt att tänka på att vissa av värden kan vara tomma eller bestå av strängar. 
-Om ni upptäcker ett värde som inte är ett nummer ska ni sätta bakgrundsfärgen till röd. 
-Till sist ska ni returerna den totalt summan av hela raden. 
+Här är det viktigt att tänka på att vissa av cellerna kan vara nummber, strängar eller tomma. 
+Om ni upptäcker att en cell har ett värde som inte är ett nummer ska ni sätta bakgrundsfärgen till röd på den cellen. 
+Till sist ska ni räkna ihop och returerna den totalt summan av hela raden. 
 */
 function sumOfAllCellsInARow(trNodeRef) {
     let sum = 0;
