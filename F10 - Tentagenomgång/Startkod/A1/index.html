@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 200px;
+            padding: 6px;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 6px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+
+    </div>
+
+
+    <script>
+        var Database = {
+            tasks: [
+                {
+                    id: 0,
+                    name: "Buy milk",
+                    date: "2024-07-12"
+                },
+                {
+                    id: 12,
+                    name: "Read a book",
+                    date: "2024-07-13"
+                },
+                {
+                    id: 2,
+                    name: "Clean the house",
+                    description: "Clean the kitchen first, then clean the living room",
+                    date: "2024-07-13"
+                },
+            ],
+
+            
+
+            remove: function(id){
+                let index = this.tasks.map((t) => t.id).indexOf(id);
+                if(index != -1){
+                    this.tasks.splice(index, 1);
+                }
+                
+            }
+        }
+
+
+        
+        function generateTasks(){ }
+
+
+        function addListeners(){ }
+
+        generateTasks();
+        addListeners();
+    </script>   
+</body>
+</html>
