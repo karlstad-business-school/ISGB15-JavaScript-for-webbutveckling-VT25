@@ -22,5 +22,21 @@ let oGlobalObject = {
 
     mouseenter : function() {
         //Här skriver du din kod!
+        console.log(this, oGlobalObject);
+        if(oGlobalObject.nbrOfMouseEnter == 0){
+            oGlobalObject.milliSecondsStart = oGlobalObject.getNbrOfMilliSeconds();
+        }
+        oGlobalObject.nbrOfMouseEnter += 1;
+
+        if(oGlobalObject.nbrOfMouseEnter == 10){
+            //Då är vi klara
+            oGlobalObject.milliSecondsStop = oGlobalObject.getNbrOfMilliSeconds();
+            let totaltTime = oGlobalObject.getNbrOfSeconds();
+            oGlobalObject.h2Ref.textContent = "Det tog dig " + totaltTime + " att trigga onmouseenter händelsen tio gånger!";
+
+            oGlobalObject.resetForNewGame();
+        }else{
+            oGlobalObject.h2Ref.textContent = "Du har nu triggat onmouseenter " + oGlobalObject.nbrOfMouseEnter + " gånger";
+        }
     }
 };

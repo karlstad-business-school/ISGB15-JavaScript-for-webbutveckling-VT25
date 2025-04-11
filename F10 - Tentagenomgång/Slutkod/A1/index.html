@@ -55,10 +55,52 @@
 
 
         
-        function generateTasks(){ }
+        function generateTasks(){ 
+            let content = document.querySelector(".content");
+            
+            for(let i = 0; i < Database.tasks.length; i++){
+                let task = Database.tasks[i];
+
+                let div = document.createElement("div");
+                div.setAttribute("class", "container");
+                div.setAttribute("data-id", task.id);
+                
+                let p = document.createElement("p");
+                p.textContent = task.name;
+                div.appendChild(p);
+
+                if(task.description != null){
+                    let i = document.createElement("i");
+                    i.textContent = task.description;
+                    div.appendChild(i);
+                }
+
+                content.appendChild(div);
+            }
+        }
 
 
-        function addListeners(){ }
+        function addListeners(){ 
+            let containers = document.querySelectorAll(".container");
+            
+            for(let i = 0; i < containers.length; i++){
+                let container = containers[i];
+
+                container.addEventListener("click", function(e){
+                    let idString = container.getAttribute("data-id");
+                    let id = parseInt(idString);
+                    Database.remove(id);
+                    container.remove();
+
+                    if(Database.removed == null){
+                        Database.removed = [];
+                    }
+                    
+                    Database.removed.push(id);
+                });
+            }
+        }
+        
 
         generateTasks();
         addListeners();
